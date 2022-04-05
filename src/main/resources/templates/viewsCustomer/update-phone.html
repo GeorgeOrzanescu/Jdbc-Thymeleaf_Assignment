@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+  </head>
+  <body th:object="${customer}">
+    <form
+      th:action="@{/customer/updatedPhone}"
+      th:object="${customer}"
+      method="POST"
+    >
+      <label for="id"> Client with id: </label>
+      <input type="text" th:field="*{id}" id="id" readonly />
+      <label for="phone"> Edit old phone number: </label>
+      <input type="text" th:field="*{phone}" placeholder="phone" id="phone" />
+      <br />
+      <input type="submit" value="Update" />
+    </form>
+  </body>
+</html>

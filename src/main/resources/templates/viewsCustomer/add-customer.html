@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add new payment</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <form
+      th:action="@{/customer/addedCustomer}"
+      th:object="${customer}"
+      method="post"
+    >
+      <label for="username"> USERNAME: </label>
+      <input
+        type="text"
+        th:field="*{userName}"
+        placeholder="username"
+        id="username"
+      />
+      <br />
+      <label for="lastname"> LASTNAME: </label>
+      <input
+        type="text"
+        th:field="*{lastName}"
+        placeholder="lastname"
+        id="lastname"
+      />
+      <br />
+      <label for="firstname"> FIRSTNAME: </label>
+      <input
+        type="text"
+        th:field="*{firstName}"
+        placeholder="firstname"
+        id="firstname"
+      />
+      <br />
+      <label for="phone"> PHONE: </label>
+      <input type="text" th:field="*{phone}" placeholder="phone" id="phone" />
+      <br />
+      <label for="address"> ADDRESS: </label>
+      <input
+        type="text"
+        th:field="*{address}"
+        placeholder="address"
+        id="address"
+      />
+      <br />
+      <label for="postalCode"> POSTALCODE: </label>
+      <input
+        type="text"
+        th:field="*{postalCode}"
+        placeholder="postalCode"
+        id="postalCode"
+      />
+      <br />
+      <label for="city"> CITY: </label>
+      <input type="text" th:field="*{city}" placeholder="city" id="city" />
+      <br />
+      <label for="country"> COUNTRY: </label>
+      <input
+        type="text"
+        th:field="*{country}"
+        placeholder="country"
+        id="country"
+      />
+      <br />
+      <input type="submit" value="Add" />
+    </form>
+  </body>
+</html>

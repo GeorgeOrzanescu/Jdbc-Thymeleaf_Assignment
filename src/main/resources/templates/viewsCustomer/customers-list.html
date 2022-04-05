@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customers by city</title>
+    <link th:href="@{/styles/customers-list.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <ul th:each="customer: ${customers}">
+      <li
+        th:text="${customer.firstName} + ' ' + ${customer.lastName} + ' ' + ${customer.city} + ' ' + ${customer.country}
+        + ' ' + ${customer.phone} + ' ' + ${customer.address} + ' ' + ${customer.postalCode} + ' ' + ${customer.id}"
+      ></li>
+    </ul>
+  </body>
+</html>

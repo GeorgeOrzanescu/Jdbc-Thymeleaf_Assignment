@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customers by city</title>
+    <link th:href="@{/styles/customers-list.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <ul th:each="product: ${products}">
+      <li
+        th:text="${product.code} + ' ' + ${product.name} + ' ' + ${product.description} + ' ' + ${product.stock} + ' ' + ${product.price}"
+      ></li>
+    </ul>
+  </body>
+</html>

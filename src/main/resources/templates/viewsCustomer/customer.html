@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>CUSTOMER</h1>
+    <div th:object="${customer}">
+      <p th:text="*{userName}"></p>
+      <p th:text="*{firstName}"></p>
+      <p th:text="*{lastName}"></p>
+      <p th:text="*{phone}"></p>
+      <p th:text="*{address}"></p>
+      <p th:text="*{city}"></p>
+      <p th:text="*{postalCode}"></p>
+      <p th:text="*{country}"></p>
+
+      <p th:text="${message}"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+
+</head>
+<body>
+<h1>CUSTOMER</h1>
+<div th:object="${payment}">
+    <p th:text="*{customerId}"></p>
+    <p th:text="*{paymentDate}"></p>
+    <p th:text="*{amount}"></p>
+    <p th:text="${message}"></p>
+</div>
+</body>
+</html>

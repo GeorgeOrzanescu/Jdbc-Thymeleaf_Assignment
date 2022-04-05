@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+</head>
+<body>
+<form
+        th:action="@{/payment/paymentDone}"
+        th:object="${payment}"
+        method="post"
+>
+    <label for="customerId"> CUSTOMER CODE: </label>
+    <input
+            type="number"
+            th:field="*{customerId}"
+            placeholder="customerId"
+            id="customerId"
+            min="0"
+    />
+    <br />
+    <label for="paymentDate"> PAYMENT DATE: </label>
+    <input
+            type="date"
+            th:field="*{paymentDate}"
+            placeholder="paymentDate"
+            id="paymentDate"
+    />
+    <br />
+    <label for="amount"> AMOUNT: </label>
+    <input
+            type="text"
+            th:field="*{amount}"
+            placeholder="amount"
+            id="amount"
+            min="0"
+    />
+    <br />
+    <input type="submit" value="Add" />
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <form
+      th:action="@{/placeOrder/newOrderDetails}"
+      th:object="${orderDetails}"
+      method="post"
+    >
+      <label for="id"> ID: </label>
+      <input
+        type="number"
+        th:value="${id}"
+        th:attr="name='id'"
+        id="id"
+        readonly
+      />
+      <br />
+      <label for="productCode"> PRODUCT CODE: </label>
+      <input
+        type="number"
+        th:field="*{productCode}"
+        placeholder="productCode"
+        id="productCode"
+        min="0"
+      />
+      <br />
+      <label for="quantity"> QUANTITY: </label>
+      <input
+        type="number"
+        th:field="*{quantity}"
+        placeholder="quantity"
+        id="quantity"
+        min="0"
+      />
+      <br />
+      <label for="priceEach"> PRICE: </label>
+      <input
+        type="text"
+        th:field="*{priceEach}"
+        placeholder="priceEach"
+        id="priceEach"
+        min="0"
+      />
+      <br />
+      <input type="submit" value="Add" />
+    </form>
+  </body>
+</html>

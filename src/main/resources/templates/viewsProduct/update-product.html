@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+  </head>
+  <body th:object="${product}">
+    <form
+      th:action="@{/product/updatedProduct}"
+      th:object="${product}"
+      method="POST"
+    >
+      <label for="code"> Product with code: </label>
+      <input type="text" th:field="*{code}" id="id" readonly />
+      <label for="name"> NAME: </label>
+      <input type="text" th:field="*{name}" placeholder="name" id="name" />
+      <br />
+      <label for="description"> DESCRIPTION: </label>
+      <input
+        type="text"
+        th:field="*{description}"
+        placeholder="description"
+        id="description"
+      />
+      <br />
+      <label for="stock"> STOCK: </label>
+      <input
+        type="number"
+        th:field="*{stock}"
+        placeholder="stock"
+        id="stock"
+        min="0"
+      />
+      <br />
+      <label for="price"> PRICE: </label>
+      <input
+        type="number"
+        th:field="*{price}"
+        placeholder="price"
+        id="phone"
+        min="0"
+      />
+      <br />
+      <input type="submit" value="Update" />
+    </form>
+  </body>
+</html>

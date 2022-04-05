@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/styles/add-customer.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <form th:action="@{/placeOrder/newOrderStatus}" method="post">
+      <h2>ORDER :</h2>
+      <div th:object="${order}">
+        <label for="id"> ID: </label>
+        <input
+          type="number"
+          th:field="*{id}"
+          th:attr="name='id'"
+          id="id"
+          min="0"
+        />
+        <br />
+        <label for="orderDate"> ORDER DATE: </label>
+        <input
+          type="text"
+          th:field="*{orderDate}"
+          placeholder="orderDate"
+          id="orderDate"
+        />
+        <br />
+        <label for="shippedDate"> SHIPPED DATE: </label>
+        <input
+          type="text"
+          th:field="*{shippedDate}"
+          placeholder="shippedDate"
+          id="shippedDate"
+        />
+        <br />
+        <label for="status"> STATUS: </label>
+        <input
+          type="text"
+          th:field="*{status}"
+          placeholder="status"
+          id="status"
+        />
+        <br />
+        <label for="comments"> COMMENTS: </label>
+        <input
+          type="text"
+          th:field="*{comments}"
+          placeholder="comments"
+          id="comments"
+        />
+        <br />
+        <label for="customerId"> CUSTOMER ID: </label>
+        <input
+          type="number"
+          th:field="*{customerId}"
+          placeholder="customerId"
+          id="customerId"
+          min="0"
+        />
+        <br />
+      </div>
+      <div th:object="${orderDetails}">
+        <label > ORDER DETAILS: </label>
+        <label for="productCode"> PRODUCT CODE: </label>
+        <input
+          type="number"
+          th:field="*{productCode}"
+          placeholder="productCode"
+          id="productCode"
+          min="0"
+        />
+        <br />
+        <label for="quantity"> QUANTITY: </label>
+        <input
+          type="number"
+          th:field="*{quantity}"
+          placeholder="quantity"
+          id="quantity"
+          min="0"
+        />
+        <br />
+        <label for="priceEach"> PRICE: </label>
+        <input
+          type="text"
+          th:field="*{priceEach}"
+          placeholder="priceEach"
+          id="priceEach"
+          min="0"
+        />
+        <br />
+      </div>
+      <input type="submit" value="Add" />
+    </form>
+  </body>
+</html>
